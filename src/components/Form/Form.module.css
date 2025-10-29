@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.form {
+  @apply bg-white rounded-[16px] flex flex-col items-center justify-center pt-[56px] px-[68px] pb-[40px];
+}

@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.h1 {
+  @apply font-semibold text-[44px] leading-[44px] tracking-[0px] text-center;
+  color: var(--headersGray);
+}

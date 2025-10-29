@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+.container {
+  @apply w-full flex flex-col;
+}
+
+.label {
+  @apply text-sm mb-2;
+  color: var(--grayPlaceholder);
+}
+
+.input {
+  @apply w-full h-[60px] rounded-[16px] font-medium text-[16px] leading-[24px] tracking-[0px] disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
+  background-color: var(--grayBackground);
+  color: var(--grayPlaceholder);
+  border: 1px solid var(--grayBorder);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.input::placeholder {
+  color: var(--grayPlaceholder);
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 1);
+}
