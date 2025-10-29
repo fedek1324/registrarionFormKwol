@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .container {
-  @apply flex items-center cursor-pointer select-none;
+  @apply flex items-start cursor-pointer select-none;
   position: relative;
 }
 
@@ -23,6 +23,7 @@
   border: 2px solid var(--grayBorder);
   border-radius: 4px;
   background-color: white;
+  margin-top: 1px;
 }
 
 .input:checked ~ .checkmark {

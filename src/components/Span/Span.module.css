@@ -2,5 +2,5 @@
 
 .span {
   @apply font-medium text-[14px] leading-[20px] tracking-[0px];
-  color: rgba(98, 108, 119, 1);
+  color: var(--grayText);
 }

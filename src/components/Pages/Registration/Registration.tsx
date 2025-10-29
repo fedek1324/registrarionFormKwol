@@ -13,10 +13,16 @@ const Registration = () => {
     return (
         <div className={styles.container}>
             <Form>
-                <H1>Hello</H1>
-                <TextInput placeholder="Введите почту" label="Корпоративный e-mail" />
-                <Checkbox onChange={() => {}}><Span>Я подтверждаю согласие с <ALink to={"/"}>политикой конфиденциальности</ALink></Span></Checkbox>
-                <Button>Продолжить</Button>
+                <H1 className={styles.formHead}>Hello</H1>
+                <div className={styles.mainContent}>
+                    <TextInput placeholder="Введите почту" label="Корпоративный e-mail" />
+                    <Checkbox onChange={() => {}}><Span>Я подтверждаю согласие с <ALink to={"#"}>политикой конфиденциальности</ALink></Span></Checkbox>
+                    <Button variant="primary">Продолжить</Button>
+                </div>
+                <div className={styles.asideContent}>
+                    <Button variant="secondary">Войти</Button>
+                    <Span className={styles.helpText}>Возник вопрос или что-то сломалось? <ALink to="#">Вступай в чат и задавай вопрос</ALink></Span>
+                </div>
             </Form>
         </div>
     )
