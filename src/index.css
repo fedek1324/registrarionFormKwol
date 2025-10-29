@@ -8,11 +8,20 @@
   --grayBorder: rgba(188, 195, 208, 0.5);
 
   --onFocusBlue: rgba(59, 130, 246, 1);
+  --blue: rgba(38, 98, 243, 1);
 }
 
 @layer base {
   body {
     @apply bg-[#E7EAFA];
     font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .spanDefault {
+    @apply font-medium text-[14px] leading-[20px] tracking-[0px];
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(98, 108, 119, 1);
   }
 }

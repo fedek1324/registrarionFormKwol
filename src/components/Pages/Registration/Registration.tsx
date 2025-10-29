@@ -5,6 +5,8 @@ import TextInput from "../../TextInput/TextInput.tsx";
 
 import styles from "./Registration.module.css";
 import Checkbox from "../../Checkbox/Checkbox.tsx";
+import Span from "../../Span/index.ts";
+import ALink from "../../ALink/ALink.tsx";
 
 
 const Registration = () => {
@@ -13,7 +15,7 @@ const Registration = () => {
             <Form>
                 <H1>Hello</H1>
                 <TextInput placeholder="Введите почту" label="Корпоративный e-mail" />
-                <Checkbox onChange={() => {}}><span>Я подтверждаю согласие с политикой конфиденциальности</span></Checkbox>
+                <Checkbox onChange={() => {}}><Span>Я подтверждаю согласие с <ALink to={"/"}>политикой конфиденциальности</ALink></Span></Checkbox>
                 <Button>Продолжить</Button>
             </Form>
         </div>

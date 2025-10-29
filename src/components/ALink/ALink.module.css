@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.link {
+  @apply font-medium text-[14px] leading-[20px] tracking-[0px] no-underline;
+  color: var(--blue);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
