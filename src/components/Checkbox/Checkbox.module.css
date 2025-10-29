@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+.container {
+  @apply flex items-center cursor-pointer select-none;
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin: 0;
+}
+
+.checkmark {
+  @apply flex items-center justify-center transition-all duration-200 flex-shrink-0;
+  height: 18px;
+  width: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  border: 2px solid var(--grayBorder);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.input:checked ~ .checkmark {
+  background-color: rgba(59, 130, 246, 1);
+  border-color: rgba(59, 130, 246, 1);
+}
+
+.checkmark::after {
+  content: "";
+  display: none;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.input:disabled ~ .checkmark {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.label {
+  @apply ml-2 font-medium text-[14px] leading-[20px] tracking-[0px];
+}
+
+.input:disabled ~ .label {
+  @apply opacity-50 cursor-not-allowed;
+}

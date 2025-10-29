@@ -9,7 +9,7 @@ function App() {
 
    return (
     <BrowserRouter>
-      <nav className='flex items-center justify-center px-36 py-4 bg-white shadow-md md:justify-between'>
+      <nav className='flex items-center justify-center md:px-36 py-4 bg-white shadow-md md:justify-between'>
         {/* Logo - center on mobile, left on desktop */}
         <div>
           <Link to="/">
