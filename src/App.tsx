@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-import Registration from './components/Pages/Registration/Registration';
+import Registration1 from './components/Pages/Registration1/Registration1';
 import kwolLogo from './assets/kwol.svg';
 import menuIcon from './assets/menu.svg';
 import notification from './assets/notification.svg';
@@ -32,7 +32,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Registration />} />
+        <Route path="/" element={<Registration1 />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} /> */}
       </Routes>

@@ -4,7 +4,7 @@ import { z } from 'zod';
 
 import TextInput from "../../TextInput/TextInput.tsx";
 import Checkbox from "../../Checkbox/Checkbox.tsx";
-import styles from "./Registration.module.css";
+import styles from "./Registration1.module.css";
 import { useEffect, useEffectEvent } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -42,7 +42,7 @@ const Registration = () => {
   return (
     <div className={styles.container}>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <h1 className={styles.formHead}>Hello</h1>
+        <h1 className={styles.formHead}>Регистрация</h1>
         <div className={styles.mainContent}>
           <TextInput
             placeholder="Введите почту"
@@ -59,10 +59,10 @@ const Registration = () => {
           </Checkbox>
           {errors.confirmPolicy && <span className="error">{errors.confirmPolicy.message}</span>}
 
-          <button className="primary">Продолжить</button>
+          <button type="submit" className="primary">Продолжить</button>
         </div>
         <div className={styles.asideContent}>
-          <button type="submit" className="secondary">
+          <button type="button" className="secondary">
             Войти
           </button>
           <span className={styles.helpText}>
