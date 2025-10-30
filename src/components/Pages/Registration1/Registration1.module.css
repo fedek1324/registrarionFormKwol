@@ -18,9 +18,7 @@
 
 
 .helpTextContainer {
-  @apply flex text-center pt-2;
-  max-width: 243px;
-  margin: 0 auto;
+  @apply flex flex-col text-center pt-2;
 }
 
 .helpText {

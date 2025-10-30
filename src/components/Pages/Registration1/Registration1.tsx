@@ -5,7 +5,6 @@ import { z } from "zod";
 import TextInput from "../../TextInput/TextInput.tsx";
 import Checkbox from "../../Checkbox/Checkbox.tsx";
 import styles from "./Registration1.module.css";
-import { useEffect, useEffectEvent } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
@@ -19,7 +18,6 @@ const Registration = () => {
   const {
     register,
     handleSubmit,
-    setFocus,
     formState: { errors },
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -70,10 +68,10 @@ const Registration = () => {
         <div className={styles.helpTextContainer}>
           <span className={styles.helpText}>
             Возник вопрос или что-то сломалось?{" "}
-            <Link to="#" tabIndex={5} className={styles.helpText}>
-              Вступай в чат и задавай вопрос
-            </Link>
           </span>
+          <Link to="#" tabIndex={5} className={styles.helpText}>
+            Вступай в чат и задавай вопрос
+          </Link>
         </div>
       </form>
     </div>
