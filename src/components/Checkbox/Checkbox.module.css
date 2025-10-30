@@ -45,6 +45,11 @@
   display: block;
 }
 
+.input:focus ~ .checkmark {
+  outline: 2px solid var(--onFocusBlue);
+  outline-offset: 2px;
+}
+
 .input:disabled ~ .checkmark {
   @apply opacity-50 cursor-not-allowed;
 }

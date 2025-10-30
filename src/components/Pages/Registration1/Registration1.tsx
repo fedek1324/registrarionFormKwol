@@ -45,13 +45,14 @@ const Registration = () => {
         <h1 className={styles.formHead}>Регистрация</h1>
         <div className={styles.mainContent}>
           <TextInput
+            {...register("email")}
             placeholder="Введите почту"
             label="Корпоративный e-mail"
-            {...register("email")}
+            tabIndex={1}
           />
           {errors.email && <span className="error">{errors.email.message}</span>}
 
-          <Checkbox {...register("confirmPolicy")}>
+          <Checkbox {...register("confirmPolicy")} tabIndex={2}>
             <span>
               Я подтверждаю согласие с{" "}
               <Link to="#">политикой конфиденциальности</Link>
@@ -59,7 +60,7 @@ const Registration = () => {
           </Checkbox>
           {errors.confirmPolicy && <span className="error">{errors.confirmPolicy.message}</span>}
 
-          <button type="submit" className="primary">Продолжить</button>
+          <button tabIndex={3} type="submit" className="primary">Продолжить</button>
         </div>
         <div className={styles.asideContent}>
           <button type="button" className="secondary">

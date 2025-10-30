@@ -1,13 +1,11 @@
-import { forwardRef, type ReactNode } from 'react';
+import { forwardRef, type ReactNode, type InputHTMLAttributes } from 'react';
 import styles from './Checkbox.module.css';
 
-interface CheckboxProps {
-  children?: ReactNode, 
-  defaultChecked?: boolean
+interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  children?: ReactNode
 }
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
-  defaultChecked,
   children,
   ...props
 }, ref) => {
@@ -16,7 +14,6 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
     <label className={`${styles.container}`}>
       <input
         type="checkbox"
-        {...{ defaultChecked }}
         className={styles.input}
         ref={ref}
         {...props}
@@ -26,5 +23,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
     </label>
   );
 });
+
+Checkbox.displayName = 'Checkbox';
 
 export default Checkbox;
