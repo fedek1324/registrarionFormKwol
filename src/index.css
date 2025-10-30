@@ -3,6 +3,9 @@
 :root {
   --headersGray: rgba(29, 32, 35, 1);
 
+  --gray-200: rgba(231, 235, 242, 1);
+  --gray-100: rgba(244, 245, 247, 1);
+
   --grayBackground: rgba(242, 243, 247, 1);
   --grayText: rgba(98, 108, 119, 1);
   --grayBorder: rgba(188, 195, 208, 0.5);
@@ -10,6 +13,7 @@
   --blue-500: rgba(38, 98, 243, 1);
   --blue-300: rgba(112, 154, 254, 1);
   --blue-700: rgba(20, 80, 224, 1);
+  
   --red: rgba(239, 68, 68, 1);
 }
 
@@ -68,16 +72,16 @@ button.primary:active {
 }
 
 button.secondary {
-  background-color: rgba(231, 235, 242, 1);
+  background-color: var(--gray-200);
   color: rgba(29, 32, 35, 1);
 }
 
 button.secondary:hover {
-  background-color: rgba(221, 226, 235, 1);
+  background-color: var(--gray-100);
 }
 
 button.secondary:active {
-  background-color: rgba(211, 217, 228, 1);
+  background-color: var(--gray-200);
 }
 
 .form {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useForm, type SubmitHandler } from "react-hook-form";
-import { z } from 'zod';
+import { z } from "zod";
 
 import TextInput from "../../TextInput/TextInput.tsx";
 import Checkbox from "../../Checkbox/Checkbox.tsx";
@@ -9,8 +9,8 @@ import { useEffect, useEffectEvent } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
-  email: z.email('Некорректный email'),
-  confirmPolicy: z.literal(true, 'Примите соглашение')
+  email: z.email("Некорректный email"),
+  confirmPolicy: z.literal(true, "Примите соглашение"),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -22,16 +22,17 @@ const Registration = () => {
     setFocus,
     formState: { errors },
   } = useForm<FormSchema>({
-    resolver: zodResolver(formSchema)
+    resolver: zodResolver(formSchema),
   });
 
-  const onSubmit: SubmitHandler<FormSchema> = (data) => console.log("Submit data", data);
+  const onSubmit: SubmitHandler<FormSchema> = (data) =>
+    console.log("Submit data", data);
 
   // с помощью useEffectEvent избавляемся от зависимости setFocus в useEffect
   const focus = useEffectEvent(() => {
     // устанавливаем фокус на первое поле (имя пользователя) после монтирования компонента
-    setFocus('email');
-  })
+    setFocus("email");
+  });
 
   useEffect(() => {
     focus();
@@ -50,7 +51,9 @@ const Registration = () => {
             label="Корпоративный e-mail"
             tabIndex={1}
           />
-          {errors.email && <span className="error">{errors.email.message}</span>}
+          {errors.email && (
+            <span className="error">{errors.email.message}</span>
+          )}
 
           <Checkbox {...register("confirmPolicy")} tabIndex={2}>
             <span>
@@ -58,17 +61,27 @@ const Registration = () => {
               <Link to="#">политикой конфиденциальности</Link>
             </span>
           </Checkbox>
-          {errors.confirmPolicy && <span className="error">{errors.confirmPolicy.message}</span>}
+          {errors.confirmPolicy && (
+            <span className="error">{errors.confirmPolicy.message}</span>
+          )}
 
-          <button tabIndex={3} type="submit" className="primary">Продолжить</button>
+          <button tabIndex={3} type="submit" className="primary">
+            Продолжить
+          </button>
         </div>
-        <div className={styles.asideContent}>
+
+        <div className={styles.buttonContainer}>
           <button tabIndex={4} type="button" className="secondary">
             Войти
           </button>
+        </div>
+
+        <div className={styles.helpTextContainer}>
           <span className={styles.helpText}>
             Возник вопрос или что-то сломалось?{" "}
-            <Link to="#" tabIndex={5}>Вступай в чат и задавай вопрос</Link>
+            <Link to="#" tabIndex={5} className={styles.helpText}>
+              Вступай в чат и задавай вопрос
+            </Link>
           </span>
         </div>
       </form>
