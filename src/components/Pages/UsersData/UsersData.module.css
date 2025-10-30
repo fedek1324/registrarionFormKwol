@@ -31,20 +31,29 @@
 
 .userInfo {
   @apply flex flex-col gap-[4px];
+  flex: 1;
+  min-width: 0;
 }
 
 .userName {
   @apply font-semibold text-[16px] leading-[24px];
   color: var(--headersGray);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .userEmail {
   @apply font-medium text-[14px] leading-[20px];
   color: var(--grayText);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .deleteButton {
   @apply px-4;
+  flex-shrink: 0;
 }
 
 .buttonContainer {
