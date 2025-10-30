@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useLocalStorage } from "../../../hooks/useLocalStorage.ts";
 import styles from "./UsersData.module.css";
 
 interface User {
@@ -9,17 +9,13 @@ interface User {
 }
 
 const UsersData = () => {
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useLocalStorage<User[]>("usersData");
 
-  useEffect(() => {
-    const storedUsers = JSON.parse(localStorage.getItem("usersData") || "[]");
-    setUsers(storedUsers);
-  }, []);
+  const usersList = users || [];
 
   const handleDeleteUser = (index: number) => {
-    const updatedUsers = users.filter((_, i) => i !== index);
+    const updatedUsers = usersList.filter((_, i) => i !== index);
     setUsers(updatedUsers);
-    localStorage.setItem("usersData", JSON.stringify(updatedUsers));
   };
 
   return (
@@ -27,13 +23,13 @@ const UsersData = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Список пользователей</h1>
 
-        {users.length === 0 ? (
+        {usersList.length === 0 ? (
           <div className={styles.emptyState}>
             <span>Пользователи не найдены</span>
           </div>
         ) : (
           <div className={styles.usersList}>
-            {users.map((user, index) => (
+            {usersList.map((user, index) => (
               <div key={index} className={styles.userCard}>
                 <div className={styles.userInfo}>
                   <div className={styles.userName}>{user.name}</div>
