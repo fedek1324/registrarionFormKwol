@@ -1,6 +1,0 @@
-@import "tailwindcss";
-
-.span {
-  @apply font-medium text-[14px] leading-[20px] tracking-[0px];
-  color: var(--grayText);
-}

@@ -14,14 +14,51 @@
 @layer base {
   body {
     @apply bg-[#E7EAFA];
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 }
 
-@layer components {
-  .spanDefault {
-    @apply font-medium text-[14px] leading-[20px] tracking-[0px];
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(98, 108, 119, 1);
-  }
+h1 {
+  @apply font-semibold text-[44px] leading-[44px] tracking-[0px] text-center;
+  color: var(--headersGray);
+}
+
+span {
+  @apply font-medium text-[14px] leading-[20px] tracking-[0px];
+  color: var(--grayText);
+}
+
+a {
+  @apply font-medium text-[14px] leading-[20px] tracking-[0px] no-underline;
+  color: var(--blue);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  @apply px-6 h-[60px] rounded-[10px] font-bold text-xs leading-4 tracking-[0.05em] uppercase align-middle tabular-nums transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+button.primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 active:scale-95;
+}
+
+button.secondary {
+  @apply transition-all duration-200;
+  background-color: rgba(231, 235, 242, 1);
+  color: rgba(29, 32, 35, 1);
+}
+
+button.secondary:hover {
+  background-color: rgba(221, 226, 235, 1);
+}
+
+button.secondary:active {
+  background-color: rgba(211, 217, 228, 1);
+}
+
+.form {
+  @apply bg-white rounded-[16px] flex flex-col items-center justify-center pt-[56px] px-[68px] pb-[40px] max-w-[536px];
 }
