@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+.container {
+  @apply flex items-center justify-center min-h-screen;
+}
+
+.formHead {
+  @apply pb-[32px];
+}
+
+.mainContent {
+  @apply flex flex-col gap-[8px] w-full;
+}
+
+.buttonContainer {
+  @apply w-full pt-3 flex flex-col;
+}
+
+.helpTextContainer {
+  @apply flex flex-wrap justify-center items-baseline pt-2;
+  max-width: 243px;
+  margin: 0 auto;
+  gap: 4px;
+}
+
+.helpText {
+  @apply font-medium text-[12px] leading-[16px] tracking-[0px];
+  text-align: center;
+}

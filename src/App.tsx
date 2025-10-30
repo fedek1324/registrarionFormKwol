@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 
 import Registration1 from './components/Pages/Registration1/Registration1';
+import Registration2 from './components/Pages/Registration2/Registration2';
+import UsersData from './components/Pages/UsersData/UsersData';
 import kwolLogo from './assets/kwol.svg';
 import menuIcon from './assets/menu.svg';
 import notification from './assets/notification.svg';
@@ -34,7 +36,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/registration1" replace />} />
         <Route path="/registration1" element={<Registration1 />} />
-        <Route path="/registration2" element={<Registration1 />} />
+        <Route path="/registration2" element={<Registration2 />} />
+        <Route path="/usersData" element={<UsersData />} />
       </Routes>
     </BrowserRouter>
   );

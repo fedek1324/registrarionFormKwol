@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+.container {
+  @apply flex items-center justify-center min-h-screen;
+  background-color: var(--grayBackground);
+}
+
+.content {
+  @apply bg-white rounded-[16px] flex flex-col items-center justify-center pt-[56px] px-[68px] pb-[40px];
+  max-width: 800px;
+  width: 100%;
+}
+
+.title {
+  @apply pb-[32px];
+}
+
+.emptyState {
+  @apply w-full text-center py-8;
+}
+
+.usersList {
+  @apply w-full flex flex-col gap-[16px] pb-[24px];
+}
+
+.userCard {
+  @apply flex items-center justify-between p-[16px] rounded-[12px];
+  background-color: var(--grayBackground);
+  border: 1px solid var(--grayBorder);
+}
+
+.userInfo {
+  @apply flex flex-col gap-[4px];
+}
+
+.userName {
+  @apply font-semibold text-[16px] leading-[24px];
+  color: var(--headersGray);
+}
+
+.userEmail {
+  @apply font-medium text-[14px] leading-[20px];
+  color: var(--grayText);
+}
+
+.deleteButton {
+  @apply px-4;
+}
+
+.buttonContainer {
+  @apply w-full pt-3 flex flex-col;
+}

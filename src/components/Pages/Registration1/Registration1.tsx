@@ -18,23 +18,27 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const Registration = () => {
-  const naviage = useNavigate();
+  const navigate = useNavigate();
 
-  const [, setEmail] = useLocalStorage<string>("email");
+  const [email, setEmail] = useLocalStorage<string>("email");
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormSchema>({
-    resolver: zodResolver(formSchema)
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: email || "",
+      confirmPolicy: email ? true : undefined
+    },
   });
 
 
   const onSubmit: SubmitHandler<FormSchema> = (data) => {
     console.log("Submit data", data);
     setEmail(data.email);
-    naviage('/registration2');
+    navigate('/registration2');
   }
 
   console.log(errors);
