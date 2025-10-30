@@ -45,9 +45,9 @@
   display: block;
 }
 
-.input:focus ~ .checkmark {
-  outline: 2px solid var(--onFocusBlue);
-  outline-offset: 2px;
+.input:focus-visible ~ .checkmark {
+  box-shadow: 0 0 0 3px var(--blue-300);
+  border-color: var(--blue-500);
 }
 
 .input:disabled ~ .checkmark {

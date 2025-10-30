@@ -63,12 +63,12 @@ const Registration = () => {
           <button tabIndex={3} type="submit" className="primary">Продолжить</button>
         </div>
         <div className={styles.asideContent}>
-          <button type="button" className="secondary">
+          <button tabIndex={4} type="button" className="secondary">
             Войти
           </button>
           <span className={styles.helpText}>
             Возник вопрос или что-то сломалось?{" "}
-            <Link to="#">Вступай в чат и задавай вопрос</Link>
+            <Link to="#" tabIndex={5}>Вступай в чат и задавай вопрос</Link>
           </span>
         </div>
       </form>
