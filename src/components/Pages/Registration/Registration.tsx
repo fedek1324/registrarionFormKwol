@@ -1,24 +1,43 @@
 import { Link } from "react-router-dom";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { z } from 'zod';
+
 import TextInput from "../../TextInput/TextInput.tsx";
 import Checkbox from "../../Checkbox/Checkbox.tsx";
 import styles from "./Registration.module.css";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useEffect, useEffectEvent } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-type Inputs = {
-  email: string;
-  confirmPolicy: boolean;
-};
+const formSchema = z.object({
+  email: z.email('Некорректный email'),
+  confirmPolicy: z.literal(true, 'Примите соглашение')
+});
+
+type FormSchema = z.infer<typeof formSchema>;
 
 const Registration = () => {
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<FormSchema>({
+    resolver: zodResolver(formSchema)
+  });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormSchema> = (data) => console.log("Submit data", data);
+
+  // с помощью useEffectEvent избавляемся от зависимости setFocus в useEffect
+  const focus = useEffectEvent(() => {
+    // устанавливаем фокус на первое поле (имя пользователя) после монтирования компонента
+    setFocus('email');
+  })
+
+  useEffect(() => {
+    focus();
+  }, [focus]);
+
   console.log(errors);
-  const requiredMessage = 'Это поле обязательно';
 
   return (
     <div className={styles.container}>
@@ -28,17 +47,11 @@ const Registration = () => {
           <TextInput
             placeholder="Введите почту"
             label="Корпоративный e-mail"
-            {...register("email", {
-              required: requiredMessage,
-              pattern: {
-                value: /^[\w.-]+@[\w.-]+\.\w+$/,
-                message: 'Укажите строку в формате email'
-              }
-            })}
+            {...register("email")}
           />
           {errors.email && <span className="error">{errors.email.message}</span>}
 
-          <Checkbox {...register("confirmPolicy", {required: requiredMessage})}>
+          <Checkbox {...register("confirmPolicy")}>
             <span>
               Я подтверждаю согласие с{" "}
               <Link to="#">политикой конфиденциальности</Link>
