@@ -28,16 +28,6 @@ const Registration = () => {
   const onSubmit: SubmitHandler<FormSchema> = (data) =>
     console.log("Submit data", data);
 
-  // с помощью useEffectEvent избавляемся от зависимости setFocus в useEffect
-  const focus = useEffectEvent(() => {
-    // устанавливаем фокус на первое поле (имя пользователя) после монтирования компонента
-    setFocus("email");
-  });
-
-  useEffect(() => {
-    focus();
-  }, [focus]);
-
   console.log(errors);
 
   return (
@@ -50,6 +40,7 @@ const Registration = () => {
             placeholder="Введите почту"
             label="Корпоративный e-mail"
             tabIndex={1}
+            autoFocus
           />
           {errors.email && (
             <span className="error">{errors.email.message}</span>
