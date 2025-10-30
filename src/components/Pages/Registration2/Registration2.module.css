@@ -17,13 +17,9 @@
 }
 
 .helpTextContainer {
-  @apply flex flex-wrap justify-center items-baseline pt-2;
-  max-width: 243px;
-  margin: 0 auto;
-  gap: 4px;
+  @apply flex flex-col text-center pt-2;
 }
 
 .helpText {
   @apply font-medium text-[12px] leading-[16px] tracking-[0px];
-  text-align: center;
 }

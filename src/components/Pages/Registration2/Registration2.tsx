@@ -35,7 +35,7 @@ const Registration2 = () => {
 
     // Add new user to the array
     const newUser = {
-      email: email as string,
+      email: email,
       name: data.name,
       password: data.password,
     };
