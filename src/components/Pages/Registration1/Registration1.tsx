@@ -41,8 +41,6 @@ const Registration = () => {
     navigate('/registration2');
   }
 
-  console.log(errors);
-
   return (
     <div className={styles.container}>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
