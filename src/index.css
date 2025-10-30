@@ -9,6 +9,7 @@
 
   --onFocusBlue: rgba(59, 130, 246, 1);
   --blue: rgba(38, 98, 243, 1);
+  --red: rgba(239, 68, 68, 1);
 }
 
 @layer base {
@@ -61,4 +62,9 @@ button.secondary:active {
 
 .form {
   @apply bg-white rounded-[16px] flex flex-col items-center justify-center pt-[56px] px-[68px] pb-[40px] max-w-[536px];
+}
+
+.error {
+  @apply text-[12px] leading-[16px] font-medium;
+  color: var(--red);
 }

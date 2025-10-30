@@ -1,37 +1,26 @@
+import { forwardRef } from 'react';
 import styles from './TextInput.module.css';
 
-interface TextInputProps {
-  type?: string;
-  placeholder?: string;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  name?: string;
-  disabled?: boolean;
-  className?: string;
+interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
 
-export default function TextInput({
-  placeholder,
-  value,
-  onChange,
-  name,
-  disabled = false,
-  className = '',
-  label,
-}: TextInputProps) {
-  return (
-    <div className={styles.container}>
-      {label && <label className={styles.label}>{label}</label>}
-      <input
-        type='text'
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        name={name}
-        disabled={disabled}
-        className={`${styles.input} ${className}`}
-      />
-    </div>
-  );
-}
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+  ({ type = 'text', className = '', label, ...props }, ref) => {
+    return (
+      <div className={styles.container}>
+        {label && <label className={styles.label}>{label}</label>}
+        <input
+          ref={ref}
+          type={type}
+          className={`${styles.input} ${className}`}
+          {...props}
+        />
+      </div>
+    );
+  }
+);
+
+TextInput.displayName = 'TextInput';
+
+export default TextInput;

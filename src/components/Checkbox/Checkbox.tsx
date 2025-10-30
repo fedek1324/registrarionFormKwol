@@ -1,38 +1,30 @@
+import { forwardRef, type ReactNode } from 'react';
 import styles from './Checkbox.module.css';
 
 interface CheckboxProps {
-  children?: React.ReactNode;
-  checked?: boolean;
-  defaultChecked?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  name?: string;
-  disabled?: boolean;
-  className?: string;
+  children?: ReactNode, 
+  defaultChecked?: boolean
 }
 
-export default function Checkbox({
-  children,
-  checked,
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
   defaultChecked,
-  onChange,
-  name,
-  disabled = false,
-  className = '',
-}: CheckboxProps) {
-  const isControlled = checked !== undefined;
+  children,
+  ...props
+}, ref) => {
 
   return (
-    <label className={`${styles.container} ${className}`}>
+    <label className={`${styles.container}`}>
       <input
         type="checkbox"
-        {...(isControlled ? { checked } : { defaultChecked })}
-        onChange={onChange}
-        name={name}
-        disabled={disabled}
+        {...{ defaultChecked }}
         className={styles.input}
+        ref={ref}
+        {...props}
       />
       <span className={styles.checkmark}></span>
       {children && <div className={styles.label}>{children}</div>}
     </label>
   );
-}
+});
+
+export default Checkbox;
