@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 
 import Registration1 from './components/Pages/Registration1/Registration1';
 import kwolLogo from './assets/kwol.svg';
@@ -32,9 +32,9 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Registration1 />} />
-        {/* <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} /> */}
+        <Route path="/" element={<Navigate to="/registration1" replace />} />
+        <Route path="/registration1" element={<Registration1 />} />
+        <Route path="/registration2" element={<Registration1 />} />
       </Routes>
     </BrowserRouter>
   );

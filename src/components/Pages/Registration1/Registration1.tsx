@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { useLocalStorage } from "../../../hooks/useLocalStorage.ts";
 
 import TextInput from "../../TextInput/TextInput.tsx";
 import Checkbox from "../../Checkbox/Checkbox.tsx";
 import styles from "./Registration1.module.css";
-import { zodResolver } from "@hookform/resolvers/zod";
+
 
 const formSchema = z.object({
   email: z.email("Некорректный email"),
@@ -15,16 +18,24 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 const Registration = () => {
+  const naviage = useNavigate();
+
+  const [, setEmail] = useLocalStorage<string>("email");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormSchema>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema)
   });
 
-  const onSubmit: SubmitHandler<FormSchema> = (data) =>
+
+  const onSubmit: SubmitHandler<FormSchema> = (data) => {
     console.log("Submit data", data);
+    setEmail(data.email);
+    naviage('/registration2');
+  }
 
   console.log(errors);
 
