@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.navButton {
+  @apply py-[6px];
+}

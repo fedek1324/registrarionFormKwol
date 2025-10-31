@@ -6,12 +6,13 @@ import UsersData from './components/Pages/UsersData/UsersData';
 import kwolLogo from './assets/kwol.svg';
 import menuIcon from './assets/menu.svg';
 import notification from './assets/notification.svg';
+import styles from './App.module.css';
 
 function App() {
 
    return (
     <BrowserRouter>
-      <nav className='flex items-center justify-center md:px-36 py-4 bg-white shadow-md md:justify-between'>
+      <nav className='flex items-center justify-center md:px-36 py-[14px] bg-white shadow-md md:justify-between'>
         {/* Logo - center on mobile, left on desktop */}
         <div>
           <Link to="/">
@@ -22,12 +23,12 @@ function App() {
         {/* Icons - hidden on mobile, visible on desktop */}
         <div className='hidden md:flex items-center gap-4'>
           {/* Notification Icon */}
-          <button type='button'>
+          <button type='button' className={`flex justify-center items-center ${styles.navButton}`}>
             <img src={notification} alt="notifications icon" className='h-8' />
           </button>
 
           {/* Menu Icon */}
-          <button type='button'>
+          <button type='button' className={`flex justify-center items-center ${styles.navButton}`}>
             <img src={menuIcon} alt="menu icon" className='h-8' />
           </button>
         </div>

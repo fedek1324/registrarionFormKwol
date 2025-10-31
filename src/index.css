@@ -13,7 +13,7 @@
   --blue-500: rgba(38, 98, 243, 1);
   --blue-300: rgba(112, 154, 254, 1);
   --blue-700: rgba(20, 80, 224, 1);
-  
+
   --red: rgba(239, 68, 68, 1);
 }
 
@@ -22,78 +22,72 @@
     @apply bg-[#E7EAFA];
     font-family: "Montserrat", sans-serif;
   }
-}
 
-h1 {
-  @apply
-    font-semibold text-[44px] leading-[44px] tracking-[0px]
+  h1 {
+    @apply font-semibold text-[44px] leading-[44px] tracking-[0px]
     text-center;
-  color: var(--headersGray);
-}
+    color: var(--headersGray);
+  }
 
-span {
-  @apply
-    font-medium text-[14px] leading-[20px] tracking-[0px];
-  color: var(--grayText);
-}
+  span {
+    @apply font-medium text-[14px] leading-[20px] tracking-[0px];
+    color: var(--grayText);
+  }
 
-a {
-  @apply
-    font-medium text-[14px] leading-[20px] tracking-[0px]
+  a {
+    @apply font-medium text-[14px] leading-[20px] tracking-[0px]
     no-underline;
-  color: var(--blue-500);
-}
+    color: var(--blue-500);
+  }
 
-a:hover {
-  text-decoration: underline;
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
-button {
-  @apply
-    px-6 h-[60px] rounded-[10px]
+  button {
+    @apply px-6 py-[22px] rounded-[10px]
     font-bold text-xs leading-4 tracking-[0.05em] uppercase
     align-middle tabular-nums
     transition-all duration-200
     disabled:opacity-50 disabled:cursor-not-allowed
     active:scale-95;
-}
+  }
 
-button.primary {
-  @apply text-white;
-  background-color: var(--blue-500);
-}
+  button.primary {
+    @apply text-white;
+    background-color: var(--blue-500);
+  }
 
-button.primary:hover {
-  background-color: var(--blue-300);
-}
+  button.primary:hover {
+    background-color: var(--blue-300);
+  }
 
-button.primary:active {
-  background-color: var(--blue-700);
-}
+  button.primary:active {
+    background-color: var(--blue-700);
+  }
 
-button.secondary {
-  background-color: var(--gray-200);
-  color: rgba(29, 32, 35, 1);
-}
+  button.secondary {
+    background-color: var(--gray-200);
+    color: rgba(29, 32, 35, 1);
+  }
 
-button.secondary:hover {
-  background-color: var(--gray-100);
-}
+  button.secondary:hover {
+    background-color: var(--gray-100);
+  }
 
-button.secondary:active {
-  background-color: var(--gray-200);
-}
+  button.secondary:active {
+    background-color: var(--gray-200);
+  }
 
-.form {
-  @apply
-    bg-white rounded-[16px]
+  .form {
+    @apply bg-white rounded-[16px]
     flex flex-col items-center justify-center
     pt-[56px] px-[68px] pb-[40px]
     w-[536px];
-}
+  }
 
-.error {
-  @apply
-    font-medium text-[12px] leading-[16px];
-  color: var(--red);
+  .error {
+    @apply font-medium text-[12px] leading-[16px];
+    color: var(--red);
+  }
 }
