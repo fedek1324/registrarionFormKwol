@@ -22,12 +22,12 @@ function App() {
         {/* Icons - hidden on mobile, visible on desktop */}
         <div className='hidden md:flex items-center gap-4'>
           {/* Notification Icon */}
-          <button>
+          <button type='button'>
             <img src={notification} alt="notifications icon" className='h-8' />
           </button>
 
           {/* Menu Icon */}
-          <button>
+          <button type='button'>
             <img src={menuIcon} alt="menu icon" className='h-8' />
           </button>
         </div>
