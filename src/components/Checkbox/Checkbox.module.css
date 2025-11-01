@@ -5,6 +5,14 @@
   position: relative;
 }
 
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
 .input {
   position: absolute;
   opacity: 0;
@@ -18,8 +26,6 @@
   @apply flex items-center justify-center transition-all duration-200 flex-shrink-0;
   height: 18px;
   width: 18px;
-  min-width: 18px;
-  min-height: 18px;
   border: 2px solid var(--grayBorder);
   border-radius: 4px;
   background-color: white;
