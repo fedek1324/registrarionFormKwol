@@ -17,7 +17,7 @@
   --red: rgba(239, 68, 68, 1);
 }
 
-@layer base {
+@layer components {
   body {
     @apply bg-[#E7EAFA];
     font-family: "Montserrat", sans-serif;

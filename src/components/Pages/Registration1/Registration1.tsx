@@ -44,7 +44,7 @@ const Registration = () => {
   return (
     <div className={styles.container}>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <h1 className={styles.formHead}>Регистрация</h1>
+        <h1 className={styles.formHead + " pb-[100"}>Регистрация</h1>
         <div className={styles.mainContent}>
           <TextInput
             {...register("email")}
