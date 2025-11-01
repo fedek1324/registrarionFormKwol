@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 .nav {
-  @apply flex items-center justify-center py-[14px] bg-white shadow-md;
+  @apply flex items-center justify-center 
+   py-[14px] 
+   bg-white;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.08), 0 4px 16px 0 rgba(0, 0, 0, 0.08);
 }
 
 @media (min-width: 768px) {
