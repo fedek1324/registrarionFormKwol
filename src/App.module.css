@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+.nav {
+  @apply flex items-center justify-center py-[14px] bg-white shadow-md;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    @apply px-36 justify-between;
+  }
+}
+
+.logo {
+  @apply w-[115px] h-[40px];
+}
+
+.iconsContainer {
+  @apply hidden items-center gap-4;
+}
+
+@media (min-width: 768px) {
+  .iconsContainer {
+    @apply flex;
+  }
+}
+
 .navButton {
-  @apply py-[6px];
+  @apply flex justify-center items-center py-[6px];
+}
+
+.icon {
+  @apply h-8;
 }

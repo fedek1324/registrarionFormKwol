@@ -6,30 +6,31 @@ import UsersData from './components/Pages/UsersData/UsersData';
 import kwolLogo from './assets/kwol.svg';
 import menuIcon from './assets/menu.svg';
 import notification from './assets/notification.svg';
+
 import styles from './App.module.css';
 
 function App() {
 
    return (
     <BrowserRouter>
-      <nav className='flex items-center justify-center md:px-36 py-[14px] bg-white shadow-md md:justify-between'>
+      <nav className={styles.nav}>
         {/* Logo - center on mobile, left on desktop */}
-        <div>
+        <div className={styles.logoContainer}>
           <Link to="/">
-            <img src={kwolLogo} alt="KWOL logo" className='w-[115px] h-[40px]' />
+            <img src={kwolLogo} alt="KWOL logo" className={styles.logo} />
           </Link>
         </div>
 
         {/* Icons - hidden on mobile, visible on desktop */}
-        <div className='hidden md:flex items-center gap-4'>
+        <div className={styles.iconsContainer}>
           {/* Notification Icon */}
-          <button type='button' className={`flex justify-center items-center ${styles.navButton}`}>
-            <img src={notification} alt="notifications icon" className='h-8' />
+          <button type='button' className={styles.navButton}>
+            <img src={notification} alt="notifications icon" className={styles.icon} />
           </button>
 
           {/* Menu Icon */}
-          <button type='button' className={`flex justify-center items-center ${styles.navButton}`}>
-            <img src={menuIcon} alt="menu icon" className='h-8' />
+          <button type='button' className={styles.navButton}>
+            <img src={menuIcon} alt="menu icon" className={styles.icon} />
           </button>
         </div>
       </nav>
