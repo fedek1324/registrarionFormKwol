@@ -15,17 +15,17 @@
 }
 
 .iconsContainer {
-  @apply hidden items-center gap-4;
+  @apply hidden;
 }
 
 @media (min-width: 768px) {
   .iconsContainer {
-    @apply flex;
+    @apply flex items-center gap-4 py-[6px];
   }
 }
 
 .navButton {
-  @apply flex justify-center items-center py-[6px];
+  @apply flex justify-center items-center p-0;
 }
 
 .icon {

@@ -53,7 +53,7 @@ const Registration2 = () => {
 
   return (
     <div className={styles.container}>
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="form-center" onSubmit={handleSubmit(onSubmit)}>
         <h1 className={styles.formHead}>Регистрация</h1>
         <div className={styles.mainContent}>
           <TextInput
