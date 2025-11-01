@@ -63,7 +63,7 @@
 }
 
 .label {
-  @apply ml-2 
+  @apply ml-2 py-[2px]
   font-medium text-[14px] leading-[20px] tracking-[0px];
   flex: 1;
 }
