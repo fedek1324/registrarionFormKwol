@@ -3,14 +3,9 @@
 .nav {
   @apply flex items-center justify-center 
    py-[14px] 
-   bg-white;
+   bg-white
+   md:px-36 md:justify-between;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.08), 0 4px 16px 0 rgba(0, 0, 0, 0.08);
-}
-
-@media (min-width: 768px) {
-  .nav {
-    @apply px-36 justify-between;
-  }
 }
 
 .logo {
@@ -18,13 +13,7 @@
 }
 
 .iconsContainer {
-  @apply hidden;
-}
-
-@media (min-width: 768px) {
-  .iconsContainer {
-    @apply flex items-center gap-4 py-[6px];
-  }
+  @apply hidden md:flex md:items-center md:gap-4 md:py-[6px] ;
 }
 
 .navButton {

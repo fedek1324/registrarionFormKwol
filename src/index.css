@@ -84,7 +84,7 @@
     @apply bg-white rounded-[48px]
     flex flex-col items-center justify-center
     pt-[56px] px-[68px] pb-[40px]
-    w-[536px];
+    max-w-[536px];
     position: absolute;
     top: 50%;
     left: 50%;
