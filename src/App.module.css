@@ -2,14 +2,16 @@
 
 .nav {
   @apply flex items-center justify-center 
-   py-[14px] 
+   py-[13px]
    bg-white
+   lg:py-[14px] 
    lg:px-36 lg:justify-between;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.08), 0 4px 16px 0 rgba(0, 0, 0, 0.08);
 }
 
 .logo {
-  @apply w-[115px] h-[40px];
+  @apply w-[75px] h-[26px] 
+  lg:w-[115px] lg:h-[40px];
 }
 
 .iconsContainer {
