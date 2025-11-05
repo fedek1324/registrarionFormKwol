@@ -20,7 +20,7 @@
 }
 
 .usersList {
-  @apply w-full flex flex-col gap-[16px] pb-[24px];
+  @apply w-full flex flex-col gap-[16px] pb-[24px] overflow-auto;
 }
 
 .userCard {

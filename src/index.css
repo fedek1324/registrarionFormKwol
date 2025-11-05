@@ -88,6 +88,7 @@
     flex flex-col items-center justify-center
     py-[24px] px-[20px]
     max-w-[536px] min-w-[360px]
+    max-h-[70vh]
     rounded-[24px]
     lg:rounded-[48px]
     lg:pt-[56px] lg:px-[68px] lg:pb-[40px];
