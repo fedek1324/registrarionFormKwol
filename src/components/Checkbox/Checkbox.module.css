@@ -5,39 +5,34 @@
   position: relative;
 }
 
-.iconContainer {
+.input {
+  cursor: pointer;
+  margin: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
+
+  appearance: none;
 }
 
-.input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 18px;
+.input::after {
+  @apply
+  transition-all duration-200;
+  content: "";
+
   width: 18px;
-  margin: 0;
-}
-
-.checkmark {
-  @apply flex items-center justify-center 
-   transition-all duration-200 
-   flex-shrink-0;
   height: 18px;
-  width: 18px;
-  border: 2px solid var(--grayBorder);
-  border-radius: 4px;
-  background-color: white;
-  margin-top: 1px;
+  
+  background: url('@/assets/checkboxUnactive.svg') center / 18px 18px no-repeat;
 }
 
-.input:checked ~ .checkmark {
-  background-color: rgba(59, 130, 246, 1);
-  border-color: rgba(59, 130, 246, 1);
+ .input:checked::after {
+  background: url('@/assets/checkboxActive.svg') center / 18px 18px no-repeat;
 }
+/*
 
 .checkmark::after {
   content: "";
@@ -62,12 +57,13 @@
   @apply opacity-50 cursor-not-allowed;
 }
 
+.input:disabled ~ .label {
+  @apply opacity-50 cursor-not-allowed;
+} */
+
 .label {
   @apply ml-2 py-[2px]
   font-medium text-[14px] leading-[20px] tracking-[0px];
   flex: 1;
 }
 
-.input:disabled ~ .label {
-  @apply opacity-50 cursor-not-allowed;
-}

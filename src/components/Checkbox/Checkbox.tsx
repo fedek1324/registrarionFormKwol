@@ -10,15 +10,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ children, ...props }, ref) => {
     return (
       <label className={styles.container}>
-        <div className={styles.iconContainer}>
-          <input
-            type="checkbox"
-            className={styles.input}
-            ref={ref}
-            {...props}
-          />
-          <span className={styles.checkmark}></span>
-        </div>
+        <input type="checkbox" className={styles.input} ref={ref} {...props} />
         {children && <div className={styles.label}>{children}</div>}
       </label>
     );
