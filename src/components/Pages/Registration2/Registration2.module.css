@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .container {
-  @apply flex items-center justify-center min-h-screen;
+  @apply flex items-center justify-center;
 }
 
 .formHead {

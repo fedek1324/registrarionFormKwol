@@ -84,7 +84,7 @@
   }
 
   .form-center {
-    @apply bg-white 
+    @apply bg-white
     flex flex-col items-center justify-center
     py-[24px] px-[20px]
     max-w-[536px] min-w-[360px]
@@ -99,6 +99,18 @@
     box-shadow:
       0 0 16px 0 rgba(0, 0, 0, 0.08),
       0 4px 16px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  @media (max-height: 640px) {
+    .form-center {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: auto;
+      transform: none;
+      border-radius: 24px 24px 0 0;
+      max-width: 100%;
+    }
   }
 
   .error {
