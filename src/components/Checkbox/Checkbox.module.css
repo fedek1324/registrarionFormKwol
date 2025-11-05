@@ -19,51 +19,29 @@
 }
 
 .input::after {
-  @apply
-  transition-all duration-200;
+  @apply transition-all duration-200;
   content: "";
 
   width: 18px;
   height: 18px;
-  
-  background: url('@/assets/checkboxUnactive.svg') center / 18px 18px no-repeat;
+
+  background: url("@/assets/checkboxUnactive.svg") center / 18px 18px no-repeat;
 }
 
- .input:checked::after {
-  background: url('@/assets/checkboxActive.svg') center / 18px 18px no-repeat;
-}
-/*
-
-.checkmark::after {
-  content: "";
-  display: none;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+.input:checked::after {
+  background: url("@/assets/checkboxActive.svg") center / 18px 18px no-repeat;
 }
 
-.input:checked ~ .checkmark::after {
-  display: block;
+.input:not(:checked):hover::after {
+  background: url("@/assets/checkboxHover.svg") center / 18px 18px no-repeat;
 }
 
-.input:focus-visible ~ .checkmark {
-  box-shadow: 0 0 0 3px var(--blue-300);
-  border-color: var(--blue-500);
+.input:checked:hover::after {
+  background: url("@/assets/checkboxActiveHover.svg") center / 18px 18px no-repeat;
 }
-
-.input:disabled ~ .checkmark {
-  @apply opacity-50 cursor-not-allowed;
-}
-
-.input:disabled ~ .label {
-  @apply opacity-50 cursor-not-allowed;
-} */
 
 .label {
   @apply ml-2 py-[2px]
   font-medium text-[14px] leading-[20px] tracking-[0px];
   flex: 1;
 }
-
