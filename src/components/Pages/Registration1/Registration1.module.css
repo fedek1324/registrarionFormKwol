@@ -5,7 +5,7 @@
 }
 
 .formHead {
-  @apply pb-[32px];
+  @apply lg:pb-[32px] pb-[24px];
 }
 
 .mainContent {

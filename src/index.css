@@ -24,7 +24,10 @@
   }
 
   h1 {
-    @apply font-semibold text-[44px] leading-[44px] tracking-[0px]
+    @apply font-semibold 
+    lg:text-[44px] lg:leading-[44px] 
+    text-[32px] leading-[36px]
+    tracking-[0px]
     text-center;
     color: var(--headersGray);
   }
@@ -81,10 +84,14 @@
   }
 
   .form-center {
-    @apply bg-white rounded-[48px]
+    @apply bg-white 
     flex flex-col items-center justify-center
-    pt-[56px] px-[68px] pb-[40px]
-    max-w-[536px];
+    py-[24px] px-[20px]
+    max-w-[536px] min-w-[360px]
+    rounded-[24px]
+    lg:rounded-[48px]
+    lg:pt-[56px] lg:px-[68px] lg:pb-[40px];
+
     position: absolute;
     top: 50%;
     left: 50%;

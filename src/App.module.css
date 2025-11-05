@@ -4,7 +4,7 @@
   @apply flex items-center justify-center 
    py-[14px] 
    bg-white
-   md:px-36 md:justify-between;
+   lg:px-36 lg:justify-between;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.08), 0 4px 16px 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -13,7 +13,7 @@
 }
 
 .iconsContainer {
-  @apply hidden md:flex md:items-center md:gap-4 md:py-[6px] ;
+  @apply hidden lg:flex lg:items-center lg:gap-4 lg:py-[6px] ;
 }
 
 .navButton {

@@ -5,7 +5,7 @@
 }
 
 .formHead {
-  @apply pb-[32px];
+  @apply lg:pb-[32px] pb-[24px];
 }
 
 .mainContent {
@@ -16,6 +16,7 @@
   @apply w-full pt-3 flex flex-col;
 }
 
+
 .helpTextContainer {
   @apply flex flex-col text-center pt-2;
 }
@@ -23,3 +24,4 @@
 .helpText {
   @apply font-medium text-[12px] leading-[16px] tracking-[0px];
 }
+
