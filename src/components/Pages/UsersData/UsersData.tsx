@@ -20,7 +20,7 @@ const UsersData = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+      <div className="form-center">
         <h1 className={styles.title}>Список пользователей</h1>
 
         {usersList.length === 0 ? (
